@@ -29,4 +29,8 @@ I also used some ANSI escape codes ,
 |  BLUE| `\x1b[38;5;33m`    |
 | DEFAULT| `\x1b[1;39m` |
 
+## COMPILATION
+clone the repo and compile 
+
+`gcc dice.c random.c -o <your_preferred_output_filename>`
 
