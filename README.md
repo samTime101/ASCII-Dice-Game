@@ -1,5 +1,5 @@
 ## ASCII Based Dice Game in C
-This is my first time creating a Gambling type Dice game in **C**. 
+Created a Gambling type Dice game in **C**. Its CLI based game with some colors not really interesting 
 ## Headerfiles
  -  `stdlib`
  - `Unistd`
