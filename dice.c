@@ -1,10 +1,9 @@
 // DICE GAME
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
 #include <string.h>
-#include "rand.h"
+#include "./include/rand.h"
 
 #define DICE_PERM 6
 
@@ -14,9 +13,11 @@ struct user{
 	int guess;
 	int balance;
 }user;
+
 struct ASCII {
     char ASCII[60];
 }ascii[DICE_PERM];
+
 int DICE , bet_return ,random_return ;
 
 
@@ -25,6 +26,7 @@ void dice_animation() {
     strcpy(ascii[1].ASCII, "---------\n|O\t|\n|\t|\n|      O|\n---------\n");
     strcpy(ascii[2].ASCII, "---------\n|O\t|\n|   O   |\n|      O|\n---------\n");
     strcpy(ascii[3].ASCII, "---------\n|O     O|\n|\t|\n|O     O|\n---------\n");
+    
     strcpy(ascii[4].ASCII, "---------\n|O     O|\n|   O   |\n|O     O|\n---------\n");
     strcpy(ascii[5].ASCII, "---------\n|O     O|\n|O     O|\n|O     O|\n---------\n");
 
@@ -38,7 +40,7 @@ for(int i = 0; i < DICE_PERM; i++){
     printf ( "\033[0J");
     if (user.guess != DICE){
         printf("\x1b[38;5;196m");
-        printf("%s",ascii[user.guess-1].ASCII);
+       printf("%s",ascii[user.guess-1].ASCII);
         printf("\x1b[1;39m");
     }else{
         printf("\x1b[38;5;46m");
@@ -122,4 +124,5 @@ else{
 }while(user.balance > 0 && bet_return != 0 && random_return !=0);
 printf("\033[1;1H");
 printf("\033[2J");//clear screen
+
 }
