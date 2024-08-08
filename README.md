@@ -31,7 +31,9 @@ I also used some ANSI escape codes ,
 
 ## COMPILATION
 clone the repo and run 
+
 `make` to compile , the output shall be in output folder
-to clean type:
+
+To clean type:
 `make clean`
 
