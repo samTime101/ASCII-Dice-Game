@@ -1,5 +1,5 @@
 #include<stdlib.h>
-#include "./include/rand.h"
+#include "../include/random.h"
 
 int _random(int max,int min){
     //rand() % (max_number + 1 - minimum_number) + minimum_number

@@ -1,9 +1,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
-#include "./include/animation.h"
+#include "../include/structures.h"
 
-void dice_animation(struct ASCII ascii[DICE_PERM], struct user user, int DICE);
 
 void dice_animation(struct ASCII ascii[DICE_PERM], struct user user, int DICE) {
     strcpy(ascii[0].ASCII, "---------\n|\t|\n|   O\t|\n|\t|\n---------\n");

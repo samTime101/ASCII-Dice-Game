@@ -1,6 +1,6 @@
 #MAKE FILE
 #dice game
 all:
-	gcc dice.c random.c dice_animation.c -o ./output/dice
+	gcc ./src/dice.c ./src/random.c ./src/dice_animation.c ./src/game_logic.c ./src/error.c -o ./output/dice
 clean:
 	rm ./output/dice

@@ -13,6 +13,4 @@ struct ASCII {
     char ASCII[60];
 };
 
-void dice_animation(struct ASCII ascii[DICE_PERM], struct user user, int DICE);
-
 #endif
