@@ -2,53 +2,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
-#include <string.h>
 #include "./include/rand.h"
+#include "./include/animation.h"
 
-#define DICE_PERM 6
-
-
-struct user{
-	int bet;
-	int guess;
-	int balance;
-}user;
-
-struct ASCII {
-    char ASCII[60];
-}ascii[DICE_PERM];
+struct user user;
+struct ASCII ascii[DICE_PERM];
 
 int DICE , bet_return ,random_return ;
-
-
-void dice_animation() {
-    strcpy(ascii[0].ASCII, "---------\n|\t|\n|   O\t|\n|\t|\n---------\n");
-    strcpy(ascii[1].ASCII, "---------\n|O\t|\n|\t|\n|      O|\n---------\n");
-    strcpy(ascii[2].ASCII, "---------\n|O\t|\n|   O   |\n|      O|\n---------\n");
-    strcpy(ascii[3].ASCII, "---------\n|O     O|\n|\t|\n|O     O|\n---------\n");
-    
-    strcpy(ascii[4].ASCII, "---------\n|O     O|\n|   O   |\n|O     O|\n---------\n");
-    strcpy(ascii[5].ASCII, "---------\n|O     O|\n|O     O|\n|O     O|\n---------\n");
-
-for(int i = 0; i < DICE_PERM; i++){
-        printf ( "\033[10;1H"); // move to row 10 col 1
-        printf ( "\033[0J");
-        printf("%s",ascii[i].ASCII);
-        sleep(1);
-}
-    printf ( "\033[10;1H");
-    printf ( "\033[0J");
-    if (user.guess != DICE){
-        printf("\x1b[38;5;196m");
-       printf("%s",ascii[user.guess-1].ASCII);
-        printf("\x1b[1;39m");
-    }else{
-        printf("\x1b[38;5;46m");
-        printf("%s",ascii[user.guess-1].ASCII);
-        printf("\x1b[1;39m");
-    }
-
-}
 
 int _random(int max,int min);
 
@@ -73,7 +33,7 @@ void game_logic(){
         printf("Your Bet is being Placed......\n");
         printf("\x1b[1;39m");
 		DICE = _random(6,0);
-        dice_animation(user.guess);
+        dice_animation(ascii,user,DICE);
 		printf("Random Number : %d Your guess : %d\n",DICE,user.guess);
 		if (user.guess == DICE) {
 			user.balance += (user.bet * 3);
