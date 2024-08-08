@@ -30,7 +30,8 @@ I also used some ANSI escape codes ,
 | DEFAULT| `\x1b[1;39m` |
 
 ## COMPILATION
-clone the repo and compile 
-
-`gcc dice.c random.c -o <your_preferred_output_filename>`
+clone the repo and run 
+`make` to compile , the output shall be in output folder
+to clean type:
+`make clean`
 
