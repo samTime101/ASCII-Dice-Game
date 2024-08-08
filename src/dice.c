@@ -17,7 +17,7 @@ int main(){
     printf ( "\033[2J");
 	user.balance = 1000;
 do{
-    printf("-------------------------------------\n");
+    printf("------------\n");
 	printf("BALANCE : %d\n",user.balance);
 	printf("Please place a bet:\n");
 	bet_return = scanf("%d",&user.bet);
@@ -47,7 +47,7 @@ else{
     continue;
 }
 }while(user.balance > 0 && bet_return != 0 && random_return !=0);
-printf("\033[1;1H");
-printf("\033[2J");//clear screen
-
+// printf("\033[1;1H");
+// printf("\033[2J");//clear screen
+sleep(2);
 }
